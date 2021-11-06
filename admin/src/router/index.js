@@ -1,13 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const Main = () => import(/* webpackChunkName: "about" */ '../pages/index.vue')
+const Home = () => import('../pages/index.vue')
 
 const routes = [
   {
     path: '/',
-    name: 'main',
-    component: Main,
+    name: 'home',
+    component: Home,
     children: [
-
+      {
+        path: 'documentation',
+        name: '说明文档',
+        component: () => import('../pages/documentation/index.vue'),
+      },
+      {
+        path: 'statusCode',
+        name: '状态码',
+        component: () => import('../pages/statusCode/index.vue'),
+      },
     ]
   },
 ]

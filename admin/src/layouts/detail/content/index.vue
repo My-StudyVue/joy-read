@@ -21,24 +21,23 @@
       content-style="padding: 24px;max-height: 320px;"
       :native-scrollbar="false"
     >
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
-      <n-h2>平山道</n-h2>
+      <n-card
+        title="卡片"
+        hoverable
+        embedded
+        header-style="text-align:center"
+        :segmented="{content: 'hard',}"
+      >
+        <router-view></router-view>
+      </n-card>
+
     </n-layout>
   </n-layout>
 </template>
 
 <script>
 import domain from './domain/domain'
+
 export default {
   name: 'index',
   data() {
@@ -53,7 +52,7 @@ export default {
     }
   },
 }
-
 </script>
+
 <style scoped>
 </style>
