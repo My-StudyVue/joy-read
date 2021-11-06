@@ -1,6 +1,5 @@
 import { h, resolveComponent } from 'vue'
 import { NIcon, } from 'naive-ui'
-import { DocumentTextOutline as Document, FolderOpenOutline as Folder } from '@vicons/ionicons5'
 import menuList from '../data/menu'
 
 function renderIcon(icon) {
@@ -8,6 +7,43 @@ function renderIcon(icon) {
 }
 
 const menuOptions = menuList.map(menu => {
+  let menuChildrenSon = []
+  let menuChildren = []
+  if (menu.children && menu.children > 0) {
+    if (menu.children.children && menu.children.children > 0) {
+      menuChildrenSon = menu.childrens.map(son => {
+        return {
+          label: () =>
+            h(
+              resolveComponent('router-link'),
+              {
+                to: {
+                  path: son.path
+                }
+              },
+              { default: () => son.name }
+            ),
+          key: menu.id,
+        }
+      })
+    }
+    menuChildren = menu.childrens.map(children => {
+      return {
+        label: () =>
+          h(
+            resolveComponent('router-link'),
+            {
+              to: {
+                path: children.path
+              }
+            },
+            { default: () => children.name }
+          ),
+        key: menu.id,
+        children: menuChildrenSon,
+      }
+    })
+  }
   return {
     label: () =>
       h(
@@ -20,7 +56,8 @@ const menuOptions = menuList.map(menu => {
         { default: () => menu.name }
       ),
     key: menu.id,
-    icon: renderIcon(Document)
+    icon: renderIcon(menu.icon),
+    children: menuChildren
   }
 })
 

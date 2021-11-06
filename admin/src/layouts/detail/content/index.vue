@@ -22,7 +22,7 @@
       :native-scrollbar="false"
     >
       <n-card
-        title="卡片"
+        :title="$route.name"
         hoverable
         embedded
         header-style="text-align:center"

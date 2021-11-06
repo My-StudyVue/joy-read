@@ -8,23 +8,6 @@ const routes = [
     name: 'home',
     component: Home,
     children: modules
-    // [
-    //   {
-    //     path: 'documentation',
-    //     name: '说明文档',
-    //     component: () => import('../pages/documentation/index.vue'),
-    //   },
-    //   {
-    //     path: 'statusCode',
-    //     name: '状态码',
-    //     component: () => import('../pages/statusCode/index.vue'),
-    //   },
-    //   {
-    //     path: 'statusCode',
-    //     name: '状态码',
-    //     component: () => import('../pages/statusCode/index.vue'),
-    //   },
-    // ]
   },
 ]
 
