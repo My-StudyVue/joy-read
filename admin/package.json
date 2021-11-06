@@ -7,10 +7,14 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.16"
+    "@vicons/ionicons5": "latest",
+    "vue": "next",
+    "vue-router": "next"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
+    "naive-ui": "^2.20.2",
+    "vfonts": "^0.1.0",
     "vite": "^2.6.4"
   }
 }

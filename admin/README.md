@@ -15,12 +15,15 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ```bash
 ## 查看@vue/cli版本，确保@vue/cli版本在4.5.0以上
 vue --version
+
 ## 安装或者升级你的@vue/cli
 npm install -g @vue/cli
+
 ## 创建
-vue create my-project
+vue create <project-name>
+
 ## 启动
-cd my-project
+cd <project-name>
 npm run serve
 ```
 
@@ -28,6 +31,22 @@ npm run serve
 
 [官方文档](https://v3.cn.vuejs.org/guide/installation.html#vite)
 
+```sh
+## 查看npm 版本
+npm -v
+## npm 6.x
+$ npm init vite@latest <project-name> --template vue
+
+## npm 7+，需要加上额外的双短横线
+$ npm init vite@latest <project-name> -- --template vue
+
+## 启动
+$ cd <project-name>
+$ npm install
+$ npm run dev
 ```
 
-```
+## 二、使用 Naive UI
+
+[官方文档](https://www.naiveui.com/zh-CN/os-theme)
+
