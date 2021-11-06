@@ -16,8 +16,6 @@ vue create my-project
 ## 启动
 cd my-project
 npm run serve
-### 或
-vue upgrade --next
 ```
 
 >### 2. 使用 Vite 创建
