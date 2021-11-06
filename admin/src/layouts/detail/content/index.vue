@@ -8,7 +8,7 @@
       :width="240"
       :native-scrollbar="false"
       :inverted="inverted"
-      style="max-height: 320px;"
+      :style="pageSty"
     >
       <n-menu
         :inverted="inverted"
@@ -30,7 +30,6 @@
       >
         <router-view></router-view>
       </n-card>
-
     </n-layout>
   </n-layout>
 </template>
@@ -43,6 +42,7 @@ export default {
   data() {
     return {
       menuOptions: domain,
+      height: window.innerHeight
     };
   },
   props: {
@@ -50,6 +50,13 @@ export default {
       type: Boolean,
       default: false,
     }
+  },
+  computed: {
+    pageSty() {
+      let sty = {};
+      sty["height"] = this.height - 56 + 'px'
+      return sty;
+    },
   },
 }
 </script>

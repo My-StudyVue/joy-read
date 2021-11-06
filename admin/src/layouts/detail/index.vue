@@ -9,7 +9,10 @@
         style="padding:16px"
       >
         更换主题
-        <n-switch v-model:value="inverted">
+        <n-switch
+          v-model:value="inverted"
+          @update:value="handleChange"
+        >
           <template #checked>深色</template>
           <template #unchecked>浅色</template>
         </n-switch>
@@ -20,8 +23,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed } from 'vue'
-import { useOsTheme, darkTheme } from 'naive-ui'
+import { defineComponent, ref } from 'vue'
 
 import content from "./content/index.vue";
 
@@ -30,12 +32,19 @@ export default defineComponent({
   components: {
     content,
   },
-  setup() {
-    const osThemeRef = useOsTheme()
+  props: {
+    osThemeRef: {
+      type: Object,
+      default: () => { },
+    },
+    theme: null,
+  },
+  setup(props, context) {
     return {
       inverted: ref(false),
-      theme: computed(() => (osThemeRef.value === 'dark' ? darkTheme : null)),
-      osTheme: osThemeRef
+      handleChange(value) {
+        context.emit('changeThemeEvent', value)
+      }
     }
   }
 })

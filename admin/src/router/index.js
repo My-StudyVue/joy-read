@@ -5,7 +5,7 @@ import modules from './modules/index'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: '说明文档',
     component: Home,
     children: modules
   },

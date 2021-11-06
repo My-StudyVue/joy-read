@@ -1,9 +1,6 @@
-import { FolderOpenOutline as Folder } from '@vicons/ionicons5'
-
 export default {
   id: 'information',
   name: '数据管理',
-  icon: Folder,
   children: [
     {
       id: 'home',
@@ -15,18 +12,16 @@ export default {
       name: '商品',
       children: [
         {
-          id: 'home',
+          id: 'goodsList',
           name: '商品列表',
-          path: '/information/goods/goodsList',
+          path: '/information/goods',
         },
         {
-          id: 'goods',
+          id: 'goodsInfo',
           name: '商品详情',
           path: '/information/goods/goodsInfo',
         },
       ],
-      path: '/information/goods',
     },
   ],
-  path: '',
 }

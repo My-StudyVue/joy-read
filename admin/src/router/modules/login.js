@@ -1,5 +1,5 @@
 export default {
-  path: 'login',
+  path: 'certification/login',
   name: '登陆',
-  component: () => import('@/pages/documentation/login/index.vue'),
+  component: () => import('@/pages/certification/login/index.vue'),
 }

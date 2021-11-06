@@ -1,5 +1,5 @@
 export default {
-  path: 'register',
+  path: 'certification/register',
   name: '注册',
-  component: () => import('@/pages/documentation/register/index.vue'),
+  component: () => import('@/pages/certification/register/index.vue'),
 }
